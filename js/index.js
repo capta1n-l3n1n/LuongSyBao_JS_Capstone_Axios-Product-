@@ -225,6 +225,7 @@ const checkout = () => {
   for (let item of cartList) {
     total += item.quantity * +item.newProduct.price;
   }
+  if (total === 0) return alert("Không có sản phẩm trong giỏ hàng");
   if (!confirm(`Xác nhận thanh toán ${total}$ ?`)) return;
   cartList.length = 0;
   document.getElementById("countItem").innerHTML = 0;
