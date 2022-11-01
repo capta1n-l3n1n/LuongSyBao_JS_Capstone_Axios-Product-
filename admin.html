@@ -78,7 +78,12 @@
             <!-- Modal Header -->
             <div class="modal-header">
               <h4 class="modal-title">Thêm sản phẩm mới</h4>
-              <button type="button" class="close" data-dismiss="modal">
+              <button
+                onclick="emptyContent()"
+                type="button"
+                class="close"
+                data-dismiss="modal"
+              >
                 &times;
               </button>
             </div>
@@ -101,6 +106,7 @@
                   placeholder="Nhập tên sản phẩm"
                 />
               </div>
+              <br />
               <div class="form-group">
                 <label>Giá sản phẩm</label>
                 <span style="color: red" id="spanPrice"></span>
@@ -111,6 +117,8 @@
                   placeholder="Nhập giá sản phẩm"
                 />
               </div>
+              <br />
+
               <div class="form-group">
                 <label>Kích cỡ màn hình</label>
                 <span style="color: red" id="spanScreen"></span>
@@ -121,6 +129,8 @@
                   placeholder="Nhập kích cỡ màn hình"
                 />
               </div>
+              <br />
+
               <div class="form-group">
                 <label>Thông số camera sau</label>
                 <span style="color: red" id="spanBackCamera"></span>
@@ -131,6 +141,8 @@
                   placeholder="Nhập thông số camera sau"
                 />
               </div>
+              <br />
+
               <div class="form-group">
                 <label>Thông số camera trước</label>
                 <span style="color: red" id="spanFrontCamera"></span>
@@ -141,6 +153,8 @@
                   placeholder="Nhập thông số camera trước"
                 />
               </div>
+              <br />
+
               <div class="form-group">
                 <label>Hình ảnh sản phẩm</label>
                 <span style="color: red" id="spanImg"></span>
@@ -151,6 +165,8 @@
                   placeholder="Nhập link hình ảnh sản phẩm"
                 />
               </div>
+              <br />
+
               <div class="form-group">
                 <label>Hãng điện thoại</label>
                 <span style="color: red" id="spanType"></span>
@@ -161,7 +177,7 @@
                   <option value="iphone">Iphone</option>
                 </select>
               </div>
-
+              <br />
               <div class="form-group">
                 <label>Mô tả sản phẩm</label>
                 <span style="color: red" id="spanDesc"></span>
@@ -173,6 +189,7 @@
                   placeholder="Nhập mô tả sản phẩm"
                 ></textarea>
               </div>
+              <br />
               <div class="form-group">
                 <button id="btnAddItem">Thêm sản phẩm</button>
                 <button id="btnSaveUpdate" style="display: none">

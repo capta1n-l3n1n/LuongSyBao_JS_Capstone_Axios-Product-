@@ -85,6 +85,7 @@ const createItem = async () => {
   }
 
   fetchApi();
+  emptyContent();
 };
 
 //render Item
@@ -116,6 +117,16 @@ const renderItem = (input) => {
 
 //hiện thông tin item cần update lên bảng
 const showUpdateItem = async (itemId) => {
+  //
+  document.getElementById("spanName").innerHTML = "";
+  document.getElementById("spanPrice").innerHTML = "";
+  document.getElementById("spanScreen").innerHTML = "";
+  document.getElementById("spanBackCamera").innerHTML = "";
+  document.getElementById("spanFrontCamera").innerHTML = "";
+  document.getElementById("spanImg").innerHTML = "";
+  document.getElementById("spanDesc").innerHTML = "";
+  document.getElementById("spanType").innerHTML = "";
+  //
   document.getElementById("btnSaveUpdate").style.display = "inline-block";
   document.getElementById("btnAddItem").style.display = "none";
   try {
@@ -142,6 +153,7 @@ const showUpdateItem = async (itemId) => {
 const updateItem = async () => {
   //valid check
   if (!validateItem()) return;
+
   //lấy input
   const id = document.getElementById("itemId").value;
   const name = document.getElementById("itemName").value;
@@ -173,7 +185,6 @@ const updateItem = async () => {
   } catch (error) {
     console.log(error);
   }
-  document.getElementById("itemId").value = "";
   document.getElementById("itemName").value = "";
   document.getElementById("itemPrice").value = "";
   document.getElementById("itemScreen").value = "";
@@ -183,6 +194,7 @@ const updateItem = async () => {
   document.getElementById("itemDesc").value = "";
   document.getElementById("itemType").value = "";
   alert("Cập nhật thành công");
+  emptyContent();
 };
 
 //delete Item
@@ -230,4 +242,26 @@ const urlCheck = (val, spanId) => {
 const showButton = () => {
   document.getElementById("btnAddItem").style.display = "inline-block";
   document.getElementById("btnSaveUpdate").style.display = "none";
+  emptyContent();
+};
+
+//empty content
+const emptyContent = () => {
+  document.getElementById("itemName").value = "";
+  document.getElementById("itemPrice").value = "";
+  document.getElementById("itemScreen").value = "";
+  document.getElementById("itemBackCamera").value = "";
+  document.getElementById("itemFrontCamera").value = "";
+  document.getElementById("itemImg").value = "";
+  document.getElementById("itemDesc").value = "";
+  document.getElementById("itemType").value = "";
+  //
+  document.getElementById("spanName").innerHTML = "";
+  document.getElementById("spanPrice").innerHTML = "";
+  document.getElementById("spanScreen").innerHTML = "";
+  document.getElementById("spanBackCamera").innerHTML = "";
+  document.getElementById("spanFrontCamera").innerHTML = "";
+  document.getElementById("spanImg").innerHTML = "";
+  document.getElementById("spanDesc").innerHTML = "";
+  document.getElementById("spanType").innerHTML = "";
 };

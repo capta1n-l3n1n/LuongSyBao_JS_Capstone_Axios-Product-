@@ -38,17 +38,15 @@ const renderItem = (data) => {
         <img
           src='${data[i].img}'
         />
-        <div>
+        <div class="contentTop">
           <h3>${data[i].name}</h3>
           <p>Camera sau: ${data[i].backCamera}</p>
           <p>Camera trước: ${data[i].frontCamera}</p>
           <p>Mô tả: ${data[i].desc}</p>
           <p>Giá: ${data[i].price}$</p>
         </div>
-        <div>
-          <button onclick="addToCart(event)" data-id="${data[i].id}">Add to cart</button> 
-          <button onclick="addToCart(event)" data-id="${data[i].id}" ><a href="./checkout.html">Buy now</a></button>
-
+        <div class="contentBottom">
+          <button class="btn btn-primary border-0" onclick="addToCart(event)" data-id="${data[i].id}">Add to cart</button> 
         </div>
       </div>
     </div>`;

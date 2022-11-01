@@ -93,15 +93,29 @@
   grid-template-columns: 1fr 1fr 1fr;
 }
 .product .main #row .col {
-  width: 100%;
   margin-bottom: 2rem;
 }
 .product .main #row .col .item {
   box-shadow: 6px 6px 12px #e2ebfc, -6px -6px 12px #fff;
-  width: 100%;
+  border: #2a73dd 1px solid;
+  border-radius: 5px;
+  margin: 0 1rem;
+  height: 380px;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+.product .main #row .col .item:hover {
+  height: 100%;
 }
 .product .main #row .col .item img {
-  width: 100%;
+  max-width: 300px;
+  margin: 1rem 0 1rem 2rem;
+}
+.product .main #row .col .item .contentTop {
+  margin-left: 1rem;
+}
+.product .main #row .col .item .contentBottom {
+  margin: 0 0 1rem 1rem;
 }
 
 img {
