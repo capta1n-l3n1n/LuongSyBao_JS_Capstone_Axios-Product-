@@ -1,0 +1,109 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+.container {
+  max-width: 1280px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.header {
+  background-color: #f5f9fe;
+  box-shadow: 0 2px 4px #e2ebfc;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 69;
+}
+.header .container {
+  display: flex;
+  height: 80px;
+  justify-content: space-between;
+  align-items: center;
+}
+.header .container .logo {
+  font-size: 2rem;
+  color: #2a73dd;
+  font-weight: 700;
+  text-decoration: none;
+}
+.header .container .logo:hover {
+  color: #2a73dd;
+}
+.header .container .navbar a {
+  font-size: 1rem;
+  color: #1d365e;
+  font-weight: 600;
+  margin-left: 2rem;
+  text-decoration: none;
+  transition: all 0.4s;
+  position: relative;
+}
+.header .container .navbar a:hover {
+  color: #2a73dd;
+}
+.header .container .navbar a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 0;
+  height: 2px;
+  background-color: #2a73dd;
+  transition: all 0.4s;
+}
+.header .container .navbar a:hover::after, .header .container .navbar a.active::after {
+  width: 100%;
+}
+.header .container .navbar a.active {
+  color: #2a73dd;
+}
+.header .container .navbar #cart {
+  margin-left: 5rem;
+}
+.header .container .navbar #cart::after {
+  content: "";
+  position: unset;
+}
+.header .container .navbar #cart i {
+  font-size: 2rem;
+}
+.header .container .navbar #cart .countNumb {
+  margin-left: 0.5rem;
+}
+
+.product .title h2 {
+  text-align: center;
+  margin: 3rem;
+}
+.product .main .sortItem {
+  margin: 2rem 0;
+  z-index: 10;
+}
+.product .main .sortItem input:nth-of-type(2) {
+  margin-left: 3rem;
+}
+.product .main #row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.product .main #row .col {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+.product .main #row .col .item {
+  box-shadow: 6px 6px 12px #e2ebfc, -6px -6px 12px #fff;
+  width: 100%;
+}
+.product .main #row .col .item img {
+  width: 100%;
+}
+
+img {
+  width: 100% !important;
+}/*# sourceMappingURL=style.css.map */
