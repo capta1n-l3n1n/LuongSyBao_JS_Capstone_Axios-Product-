@@ -169,12 +169,12 @@ const renderCart = (data) => {
 
   let cartListHTML = "";
   for (let i in data) {
-    cartListHTML += `<div class="col">
-      <div class="item">
-      <img
+    cartListHTML += `<div class="col py-2">
+      <div class="item border py-3 px-3">
+      <img class="w-25"
         src='${data[i].newProduct.img}'
       />
-      <div>
+      <div class="pt-2">
         <p>Camera sau: ${data[i].newProduct.backCamera}</p>
         <p>Camera trước: ${data[i].newProduct.frontCamera}</p>
         <p>Mô tả: ${data[i].newProduct.desc}</p>
@@ -182,10 +182,10 @@ const renderCart = (data) => {
       </div>
 
         <div>
-          <button onclick="addToCart(event)" data-id="${data[i].newProduct.id}">+</button>
+          <button class="btn btn-info" onclick="addToCart(event)" data-id="${data[i].newProduct.id}">+</button>
           <span id="count-${data[i].newProduct.id}">${data[i].quantity}</span>
-          <button onclick="changeItem(event)" data-id="${data[i].newProduct.id}">-</button>
-          <button onclick="removeItem(event)" data-remove="${data[i].newProduct.id}">Xóa</button>
+          <button class="btn btn-info" onclick="changeItem(event)" data-id="${data[i].newProduct.id}">-</button>
+          <button class="btn btn-danger" onclick="removeItem(event)" data-remove="${data[i].newProduct.id}">Xóa</button>
         </div>
     </div>
   </div>`;
@@ -227,7 +227,7 @@ const checkout = () => {
   }
   if (!confirm(`Xác nhận thanh toán ${total}$ ?`)) return;
   cartList.length = 0;
-
+  document.getElementById("countItem").innerHTML = 0;
   setLocal();
   renderCart();
   totalBuy();
