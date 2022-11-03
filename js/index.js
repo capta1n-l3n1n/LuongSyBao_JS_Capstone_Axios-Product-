@@ -1,6 +1,4 @@
 // https://633fd4c4d1fcddf69caa8103.mockapi.io/capstone
-// import { Product } from "../method/Products.js";
-// import { CartItem } from "../method/CartItem.js";
 
 window.onload = () => {
   getItem();
@@ -185,7 +183,7 @@ const renderCart = (data) => {
           <button class="btn btn-info" onclick="addToCart(event)" data-id="${data[i].newProduct.id}">+</button>
           <span id="count-${data[i].newProduct.id}">${data[i].quantity}</span>
           <button class="btn btn-info" onclick="changeItem(event)" data-id="${data[i].newProduct.id}">-</button>
-          <button class="btn btn-danger" onclick="removeItem(event)" data-remove="${data[i].newProduct.id}">Xóa</button>
+          <button class="btn btn-danger" onclick="removeItem(event)" data-id="${data[i].newProduct.id}">Xóa</button>
         </div>
     </div>
   </div>`;
@@ -229,6 +227,8 @@ const checkout = () => {
   if (!confirm(`Xác nhận thanh toán ${total}$ ?`)) return;
   cartList.length = 0;
   document.getElementById("countItem").innerHTML = 0;
+  alert("Thanh toán thành công");
+
   setLocal();
   renderCart();
   totalBuy();
@@ -236,8 +236,10 @@ const checkout = () => {
 
 //removeItem
 const removeItem = (e) => {
+  if (!confirm("Bạn muốn xóa sản phẩm này khỏi giỏ hàng?")) return;
+
   getLocal();
-  const itemId = e.target.getAttribute("data-remove");
+  const itemId = e.target.getAttribute("data-id");
   const data = cartList;
   for (let i in data) {
     if (data[i].newProduct.id === itemId) {
